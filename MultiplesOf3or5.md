@@ -54,5 +54,10 @@ Public Static int solution (int value)
 ## 2. Handeling the negative numbers
 `if (value < 0) return 0;` - this checks for negatives because if a number is less than 0 it is negative. so it's kinda like a check point. It will only go down this branch if neg is true
 
+## 3. Creating a verible to store the sum
+`int sum = 0` - this creats a verable that is an integer named sum and sets it to 0. sum = the running total in this code
+
+## 4. The loop
+`for (int i = 0; i < value; i++)` -  this counts up from i while it is less to what ever value is set as. `for (start; condition; step)` in this case i = 0. `i++` is i=i+1 . If value = 10 then it will be 1,2,3,4,5,6,7,8,9 and will stop there because it is not <= .  
 
   
