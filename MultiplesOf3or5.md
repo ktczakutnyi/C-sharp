@@ -51,5 +51,8 @@ Public Static int solution (int value)
 
   - `(int value)` - this is parameter (input). solution(10) inside the function *value = 10*
 
-  
+## 2. Handeling the negative numbers
+    `if (value < 0) return 0;` - this checks for negatives because if a number is less than 0 it is negative. so it's kinda like a check point. It will only go down this branch if neg is true
+
+    
   
