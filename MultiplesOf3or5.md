@@ -46,4 +46,10 @@ Public Static int solution (int value)
   - `Static` - means the function belongs to the class itself, not an of the class. Example: `Math.Abs(5)` we didnt create a math object, we only called it. Similar to an import in python
 
   - `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
+
+  - `solution` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
+
+  - `(int value)` - this is parameter (input). solution(10) inside the function *value = 10*
+
+  
   
