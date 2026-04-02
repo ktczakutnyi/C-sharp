@@ -16,7 +16,8 @@ Examples
 
 [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
-Tags: Mathematics, Algorithms
+Tags: *Mathematics, Algorithms*
+> Source https://www.codewars.com/kata/54da5a58ea159efa38000836 
 
 ```
 Public Static int solution (int value)
@@ -31,3 +32,16 @@ Public Static int solution (int value)
       }
     }
 }
+
+**This is O(n)**
+
+# *Let's brake down EVERYTHING*
+
+## 1. Method Declaration
+   `Public Static int solution (int value)`
+   This line defines a function (method)
+
+  `Public` - This means any code can call this method. Not restricted to the class. "This funtion is visible to the outside world"
+  `Static` - means the function belongs to the class itself, not an of the class. Example: `Math.Abs(5)` we didnt create a math object, we only called it. Similar to an import in python
+  `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
+  
