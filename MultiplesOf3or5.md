@@ -32,6 +32,7 @@ Public Static int solution (int value)
       }
     }
 }
+```
 
 **This is O(n)**
 
