@@ -1,25 +1,36 @@
 #Daily Temperatures
 
-Given an array of integers temperatures represents the daily temperatures, return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.
+Given an `m x n` 2D binary grid `grid` which represents a map of '1's (land) and '0's (water), return *the number of islands*.
+
+An **island** is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
 Example 1:
 ```
-Input: temperatures = [73,74,75,71,69,72,76,73]
-Output: [1,1,4,2,1,1,0,0]
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+```
 Example 2:
 ```
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
 ```
-Input: temperatures = [30,40,50,60]
-Output: [1,1,1,0]
-Example 3:
-```
-```
-Input: temperatures = [30,60,90]
-Output: [1,1,0]
- ```
+Constraints:
+ - m == grid.length
+ - n == grid[i].length
+ - 1 <= m, n <= 300
+ - grid[i][j] is '0' or '1'.
 
-Tags: *Array, Stack, Monotonic Stack*
-> Source https://leetcode.com/problems/daily-temperatures/description/
+Tags: *Graph, DFS, BFS, Matrix*
+> Source https://leetcode.com/problems/number-of-islands/description/
 
 ```
 Public Static 
