@@ -99,8 +99,15 @@ this checks 2 conditions
 `return answer` - returns the result after checking all the temps it returns the answer arry
 
 ## Walkthrough Example
-## Walkthrough Example
-
+```
+for each day
+while stack is not empty
+and today is warmer than the day on top of the stack
+pop the previous day
+calculate how many days it waited
+store that in the answer
+push the current day onto the stack
+```
 - **1. input** `[73,74,75,71]`
 - **2. start** `stack = [] answer = [0,0,0,0]`
 - **3. day 0 temperature = 73** stack is empty, so push the index. `push 0` `stack = [] answer = [0,0,0,0]`
@@ -121,13 +128,7 @@ pop old days
 calculate wait time
 store the answer
 ```
-
-Then push the current day:
-```
-push current index onto the stack
-```
-
----
+Then push the current day: push current index onto the stack
 
 ### Mental Model
 
@@ -139,18 +140,30 @@ Think of the stack as:
 
 When a warmer day arrives, those waiting days are **resolved immediately**.
 
+#remeber
+the stack stores `days that are still waiting for answer day` when warmer day appereas `pop earilier days and calculate waite and store`
+
 # method 2 Brute-Force
 ```
-Public int[] DailyTemperatures(int[] temperatures)
+public int[] DailyTemperatures(int[] temperatures)
 {
+    int n = temperatures.Length;
+    int[] answer = new int[n];
 
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {if (temperatures[j] > temperatures[i])
+            {answer[i] = j - i;
+                break;
+            }
+        }
+    } return answer;
 }
 ```
-```
 
-```
-
-**This is O**
+**O(n²)**
+for each day you may scan all remaining days.
 
 # *Let's brake down EVERYTHING* 
 
@@ -159,43 +172,51 @@ Public int[] DailyTemperatures(int[] temperatures)
 
   - `Public` - This means any code can call this method. Not restricted to the class. "This funtion is visible to the outside world"
 
-  - `Static` - means the function belongs to the class itself, not an of the class. Example: `Math.Abs(5)` we didnt create a math object, we only called it. Similar to an import in python
+  - `int[]` - array of integers/whole numbers
 
-  - `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
+  - `DailyTemperatures` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
 
-  - `find_it` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
+  - `(int[] temperatures)` - this is parameter (input) Example `Input: temperatures = [73,74,75,71,69,72,76,73]`
 
-  - `(int[] seq)` - this is parameter (input)
+## 2. Get arry size
+`int n = temperatures.Length;` - Stores how many elements are on the arry. example `[73,73,74] n=3` 
 
-## 2.
-`foreach(int num in seq)` - 
+## 3. create answer arry
+`int[] answer = new int[n];` -  this creates an arry the same size as `temperatuers` example start state `answer = [0,0,0,0,0]`
 
-## 3. 
-`int count = 0;` - 
+## 4. outer loop
+`for (int i=0; i<n:i++)` - this selects the current day. example `i=0 i=1 i=2`   
 
-## 4.
-`foreach(int n in seq` -   
+## 5. inner loop
+`for (int j = i+1; j<n;j++` - this scans for future days Example `currrent day = i , future day = j` 
 
-## 
-`if(n==num)` - 
+## 6. compare temps
+`if (temperatures[j] > temperatures[i])` - This checks: if the future day is warmer.
 
-## 6.
-`it(count%2==1)` - 
+## 7. calcukate wait time
+`answer [i] =j-i` - Example `i=2 j=6 6-2=4` so the wait is 4 days  
 
-## 7. 
-`return num` -  
-
-## 8. 
-`return =1` -
+## 8. break
+`break;` -Stops searching because found the first warmer day.
 
 ## Walkthrough
-- 1. 
-- 2. 
-- 3. 
+- **1. input** `[73,74,75,71]`
+- **2. start** `answer = [0,0,0,0]
+- **3. day 0 temperature = 73** check each future day: 74 > 73 = warmer
+ store the wait time: `answer[0] = 1 - 0 = 1` result: `answer = [1,0,0,0]`
+- **4. day 1 temperature = 74** check future days: 75 > 74 = warmer store wait time: `answer[1] = 2 - 1 = 1` result: `answer = [1,1,0,0]`
+- **5. day 2 temperature = 75** check future days: 71 < 75 = not warmer no more days to check. result: `answer = [1,1,0,0]`
+- **6. day 3 temperature = 71** there are no future days to check. result: `answer = [1,1,0,0]`
+- **7. loop ends**
+days `2` and `3` never find a warmer future temperature.
+their answers remain `0`.
 
  ```
-for each number
-  count how many times it(the number) appears
-  if the count is odd
-    reaturn it
+for each day
+check every future day
+if a warmer temperature is found
+record how many days it took
+stop searching for that day
+if no warmer temperature exists
+answer stays 0
 ```
