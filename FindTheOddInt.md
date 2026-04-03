@@ -38,7 +38,7 @@ Public Static int find_it(int[] seq)
 }
 ```
 
-**This is O**
+**This is O(n^2)**
 
 # *Let's brake down EVERYTHING* 
 
@@ -53,41 +53,36 @@ Public Static int find_it(int[] seq)
 
   - `find_it` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
 
-  - `(int value)` - this is parameter (input). solution(10) inside the function *value = 10*
+  - `(int[] seq)` - this is parameter (input)
 
-## 2. 
-`if (value < 0) return 0;` - 
+## 2. for each loop
+`foreach(int num in seq)` - this loops through every integer (whole number) in the arry 
 
-## 3. 
-`int sum = 0` - 
+## 3. Count verible
+`int count = 0;` - this creates an integer called count that stores how many times a number appears. Example `count=0` now every time that cumber apereas count++ or count=count+1
 
-## 4. 
-`for (int i = 0; i < value; i++)` -  
+## 4. Second (nested) loop counting
+`foreach(int n in seq` - this loops through the array again. and compares every element to `num` example num=3 1,2,2,3 (match), 3(match)  
 
-## 5. 
-`if (i% 3 == 0 || i % 5 == 0)` - 
+## 5. Check if matches
+`if(n==num)` - checks if n equals num if yes `count++` os count= count +1
 
-## 6. 
-`%` - 
+## 6. check if number appears even or odd number of times
+`it(count%2==1)` -  divides by 2 and then sees what ramander is. if truw returns answer
 
+## 7. answer
+`return num` - this returns the value of num 
 
-## 7. 
-`||` -
-
-## 8.
-`sum += i` -
-
-## 9. 
-`return sum;` -
+## 8. saftey return
+`return =1` - this is a back up return **C# REQUIRES EVERY CODE PATH TO RETURN TO SOMETHING**
 
 ## Walkthrough
-- 1. 
-- 2. 
-- 3. 
-- 4. 
-- 5. 
+- 1. input. [0,1,0,1,0]
+- 2. loop through seq counts 0 is 3 times 1 is 2 times
+- 3. check if its odd: 3%2=1 = odd so returns the number `0` because it appears an odd amount of times (3 times)
 
-# method 1
+# method 2
+**O(n) done by using XOR**
 ```
 Public Static int solution (int value)
 {
