@@ -16,9 +16,11 @@ Examples
 
 [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
-Tags: *Mathematics, Algorithms*
+Tags: *Fundamentals*
 > Source https://www.codewars.com/kata/54da5a58ea159efa38000836 
 
+# There are two diffrent ways to this that we will cover 
+## method 1
 ```
 Public Static int solution (int value)
 {
@@ -28,7 +30,7 @@ Public Static int solution (int value)
 
 **This is O**
 
-# *Let's brake down EVERYTHING*
+# *Let's brake down EVERYTHING* 
 
 ## 1. Method Declaration
    `Public Static int solution (int value)` - This line defines a function (method)
