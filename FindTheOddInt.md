@@ -81,6 +81,13 @@ Public Static int find_it(int[] seq)
 - 2. loop through seq counts 0 is 3 times 1 is 2 times
 - 3. check if its odd: 3%2=1 = odd so returns the number `0` because it appears an odd amount of times (3 times)
 
+ ```
+for each number
+  count how many times it(the number) appears
+  if the count is odd
+    reaturn it
+```
+
 # method 2
 **O(n) done by using XOR**
 ```
