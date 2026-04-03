@@ -28,11 +28,11 @@ Public Static int find_it(int[] seq)
     {int count = 0;
       foreach (int n in seq)
       {if (n == num)
-      {count++;}
+        {count++;}
       }
       if (count%2 == 1)
-      {return num;
-      }}
+        {return num;
+        }}
   return -1; 
   
 }
@@ -43,7 +43,7 @@ Public Static int find_it(int[] seq)
 # *Let's brake down EVERYTHING* 
 
 ## 1. Method Declaration
-   `Public Static int solution (int value)` - This line defines a function (method)
+   `Public Static int find_it(int[] seq)` - This line defines a function (method)
 
   - `Public` - This means any code can call this method. Not restricted to the class. "This funtion is visible to the outside world"
 
@@ -51,7 +51,7 @@ Public Static int find_it(int[] seq)
 
   - `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
 
-  - `solution` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
+  - `find_it` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
 
   - `(int value)` - this is parameter (input). solution(10) inside the function *value = 10*
 
