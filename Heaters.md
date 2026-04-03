@@ -33,7 +33,8 @@ Constraints:
 
 Tags: *Array, Stack, Monotonic Stack*
 > Source https://leetcode.com/problems/heaters/description/
-> similar tp https://codeforces.com/contest/702/problem/C#
+
+> similar to https://codeforces.com/contest/702/problem/C#
 
 ```
 Public Static 
