@@ -22,7 +22,7 @@ Tags: *Array, Stack, Monotonic Stack*
 > Source https://leetcode.com/problems/daily-temperatures/description/
 
 # There are two diffrent ways to this that we will cover 
-# method 1
+# method 1 Monotonic Stack
 ```
 Public int[] DailyTemperatures(int[] temperatures)
 {
@@ -52,7 +52,7 @@ function DailyTemperatures(temperatures)
   return answer
 ```
 
-**This is O**
+**This is O(n)**
 
 # *Let's brake down EVERYTHING* 
 
@@ -61,24 +61,22 @@ function DailyTemperatures(temperatures)
 
   - `Public` - This means any code can call this method. Not restricted to the class. "This funtion is visible to the outside world"
 
-  - `Static` - means the function belongs to the class itself, not an of the class. Example: `Math.Abs(5)` we didnt create a math object, we only called it. Similar to an import in python
+  - `int[]` - array of integers/whole numbers
 
-  - `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
+  - `DailyTemperatures` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
 
-  - `find_it` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
+  - `(int[] temperatures)` - this is parameter (input) Example `Input: temperatures = [73,74,75,71,69,72,76,73]`
 
-  - `(int[] seq)` - this is parameter (input)
+## 2.Get input arry length
+`int n= temperature.length` - this makes an arry that stores the amount of days. example termpratures[73,74,75,71,79] n=5 
 
-## 2.
-`foreach(int num in seq)` - 
+## 3. creat the arry answer
+`int[] answer=new int[n];` - creates an arry named answer that is the size of n anf pre fill it with 0s. this creates an arry names answer with an intial value of [0,0,0,0,0,0] 
 
-## 3. 
-`int count = 0;` - 
+## 4. Create the stack
+`Stack<int> stack = new Stack<int>();` - this creates an empty stack that will store indexs of days waiting for warmer temp. Example stack [2,3,4] these are indexs of days waiting for warmer temps. not temps themselves because we need to calculate `days waited= index-prev index`  
 
-## 4.
-`foreach(int n in seq` -   
-
-## 
+## 5. 
 `if(n==num)` - 
 
 ## 6.
