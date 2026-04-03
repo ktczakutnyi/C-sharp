@@ -74,7 +74,7 @@ why is works for moltiples: a num is a multiple when remainder is 0
 ## 8. Adding to the sum
 `sum += i` - is the same as sum = sum + 1 , example sum=0 i=3 sujm=3 i=5 sum=8 i=6 sum=14
 
-##9. returning the final answer
+## 9. returning the final answer
 `return sum;` - `solution(10)` returns 23 walk through input: `solution(10)' numbers tested 0,1,2,3,4,5,6,7,8,9, multiples of 3 or 5: 3,5,6,9 sum: 3+5+6+9= 23
 
 ## Walkthrough
