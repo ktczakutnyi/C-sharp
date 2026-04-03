@@ -17,20 +17,21 @@ You must write an algorithm that uses only constant extra space.
 
 Example 1:
 ```
-Input: houses = [1,2,3], heaters = [2]
-Output: 1
-Explanation: The only heater was placed in the position 2, and if we use the radius 1 standard, then all the houses can be warmed.
+Input: chars = ["a","a","b","b","c","c","c"]
+Output: 6
+Explanation: The groups are "aa", "bb", and "ccc". This compresses to "a2b2c3".
 ```
 Example 2:
 ```
-Input: houses = [1,2,3,4], heaters = [1,4]
+Input: chars = ["a"]
 Output: 1
-Explanation: The two heaters were placed at positions 1 and 4. We need to use a radius 1 standard, then all the houses can be warmed.
+Explanation: The only group is "a", which remains uncompressed since it's a single character.
 ```
-Examoke 3:
+Example 3:
 ```
-Input: houses = [1,5], heaters = [2]
-Output: 3
+Input: chars = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
+Output: 4
+Explanation: The groups are "a" and "bbbbbbbbbbbb". This compresses to "ab12".
  ```
 
 Constraints:
