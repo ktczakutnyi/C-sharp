@@ -21,14 +21,38 @@ Output: [1,1,0]
 Tags: *Array, Stack, Monotonic Stack*
 > Source https://leetcode.com/problems/daily-temperatures/description/
 
+# There are two diffrent ways to this that we will cover 
+# method 1
 ```
-Public Static 
+Public int[] DailyTemperatures(int[] temperatures)
 {
-  
+  int n=temperatures.Length;
+  int[] answer= new int[n];
+  for(int i=0; i<n; i++)
+  {
+    while(stack.count > 0 && temperatures[i]>temperatures[stack.peek()])
+    { int prevIndex = stack.pop();
+      answer[prevIndex = i-prevIndex;
+     } stack.push(i);
+   return answer;
+   }
 }
 ```
+```
+function DailyTemperatures(temperatures)
+  n=length of temperatures arry
+  create arry answer of size n
+  create empty stack
+  for i from 0 to n-1
+   while stack is not empty
+    and termperatures[i]>termperatures[top of stack]
+    prev index x = pop from stack
+    ianswer[prevIndex = i - previnex]
+   push i onto stack
+  return answer
+```
 
-**This is O)**
+**This is O**
 
 # *Let's brake down EVERYTHING* 
 
