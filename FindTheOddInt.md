@@ -116,6 +116,16 @@ Public Static int find_it(int[] seq)
 - Example: 7^0=7 2^0=2 7^7=0 2^2=0
 - why it cancels out: {1,1,2} start result =0 0^1=1 1^1=0 0^2=2
 
+```
+function find_it(sequence)
+  set result to 0 (creating the varible)
+  for each number in sequence
+    result = rsult XOR number
+  End for
+  return result
+end functon
+```
+
 ## 1. Method Declaration
    `Public Static int find_it(int[] seq)` - This line defines a function (method)
 
