@@ -1,4 +1,4 @@
-# Multiples of 3 or 5
+# Find the odd int
 
 Given an array of integers, find the one that appears an odd number of times.
 
@@ -84,17 +84,33 @@ Public Static int find_it(int[] seq)
 # method 2
 **O(n) done by using XOR**
 ```
-Public Static int solution (int value)
+Public Static int find_it(int[] seq)
 {
-  
+  int result = 0;
+  foreach (int num in seq)
+  {
+    result ^= num;
+  }
+  return result;
+
 }
 ```
-**This is O**
+**O(n) done by using XOR**
 
 # *Let's brake down EVERYTHING* 
 
+## Why it works (think in binary terms)
+- a num xor itself becomes 0
+- a num xor 0 stays the same
+- therefor even number cancels itself out
+- example 3^5 3=0011 5=0101 0011^0101=0110 011=6 so 3^5=6
+- **rule 1** a^a=0 a# xor itself = 0
+- **rule 2** a^0=a a# xor 0 stays the samee
+- Example: 7^0=7 2^0=2 7^7=0 2^2=0
+- why it cancels out: {1,1,2} start result =0 0^1=1 1^1=0 0^2=2
+
 ## 1. Method Declaration
-   `Public Static int solution (int value)` - This line defines a function (method)
+   `Public Static int find_it(int[] seq)` - This line defines a function (method)
 
   - `Public` - This means any code can call this method. Not restricted to the class. "This funtion is visible to the outside world"
 
@@ -102,38 +118,22 @@ Public Static int solution (int value)
 
   - `int` - stands for integer. it means a whole number. this is the return type. it tells c# "This function will return an int"
 
-  - `solution` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
+  - `find_it` - this is the methods name. tbh it could be anything. But people like it to kinda make sence and be readable
 
-  - `(int value)` - this is parameter (input). solution(10) inside the function *value = 10*
+  - `(int[] seq)` - this is parameter (input)
 
-## 2. 
-`if (value < 0) return 0;` - 
+  - Example call: find_it(new int[] {1,1,2,2,3,3,3};
 
-## 3. 
-`int sum = 0` - 
+## 2. Create the start varible
+`int result = 0` - this creates a varible named resule and starts it at 0. this will hold the runnint xor resilt
 
-## 4. 
-`for (int i = 0; i < value; i++)` -  
+## 3. loop through each number in the arry one at a time
+`foreach(int num in seq)` - this means go through each number in the arry one at a time. 
 
-## 5. 
-`if (i% 3 == 0 || i % 5 == 0)` - 
+## 4. XOR the result
+`reult^=num;` -  result=result^num; so each time through the loop we combine the current number into the result
 
-## 6. 
-`%` - 
+## 5. return whats left
+`return result;` - after all the even count numbers cancle out the odd number is the only one left. Example [1,2,2,3,3,4,3,3,3,2,2,1] each numver group becomes 0 0^0^0^4=4 
 
 
-## 7. 
-`||` -
-
-## 8.
-`sum += i` -
-
-## 9. 
-`return sum;` -
-
-## Walkthrough
-- 1. 
-- 2. 
-- 3. 
-- 4. 
-- 5. 
