@@ -22,8 +22,18 @@ Tags: *Fundamentals*
 # There are two diffrent ways to this that we will cover 
 # method 1
 ```
-Public Static int solution (int value)
+Public Static int find_it(int[] seq)
 {
+  foreach (int num in seq)
+    {int count = 0;
+      foreach (int n in seq)
+      {if (n == num)
+      {count++;}
+      }
+      if (count%2 == 1)
+      {return num;
+      }}
+  return -1; 
   
 }
 ```
