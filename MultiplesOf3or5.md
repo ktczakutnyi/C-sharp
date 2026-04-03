@@ -61,4 +61,25 @@ Public Static int solution (int value)
 `for (int i = 0; i < value; i++)` -  this counts up from i while it is less to what ever value is set as. `for (start; condition; step)` in this case i = 0. `i++` is i=i+1 . If value = 10 then it will be 1,2,3,4,5,6,7,8,9 and will stop there because it is not <= .  
 
 ## 5. The condition
-`if (i% 3 == 0 || i % 5 == 0)` this checks is `i` is divisible by 3 or 5 
+`if (i% 3 == 0 || i % 5 == 0)` - this checks is `i` is divisible by 3 or 5 
+
+## 6. The modulus of factor `%`
+`%` - example `a%b` means the remainder when `a` is divided by `b` `6%3=0` because 6/3=2 with no left over. `7%3=1` because 7/3=2 remainer 1.
+
+why is works for moltiples: a num is a multiple when remainder is 0
+
+## 7. Logical `||` operator
+`||` - this is *or* `A||B` = A or B Binary - 10=1 01=1 00=0 11=1 Examples i=b 6%3=0 = true so we add 6 
+
+## 8. Adding to the sum
+`sum += i` - is the same as sum = sum + 1 , example sum=0 i=3 sujm=3 i=5 sum=8 i=6 sum=14
+
+##9. returning the final answer
+`return sum;` - `solution(10)` returns 23 walk through input: `solution(10)' numbers tested 0,1,2,3,4,5,6,7,8,9, multiples of 3 or 5: 3,5,6,9 sum: 3+5+6+9= 23
+
+## Walkthrough
+- 1. check with sum = 0
+- 2. check every number nelow value (input)
+- 3. check if its divisable by 3 or 5
+- 4. add it to the sum
+- 5. return final total  
