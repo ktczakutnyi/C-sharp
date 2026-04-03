@@ -60,4 +60,5 @@ Public Static int solution (int value)
 ## 4. The loop
 `for (int i = 0; i < value; i++)` -  this counts up from i while it is less to what ever value is set as. `for (start; condition; step)` in this case i = 0. `i++` is i=i+1 . If value = 10 then it will be 1,2,3,4,5,6,7,8,9 and will stop there because it is not <= .  
 
-  
+## 5. The condition
+`if (i% 3 == 0 || i % 5 == 0)` this checks is `i` is divisible by 3 or 5 
