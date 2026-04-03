@@ -76,29 +76,68 @@ function DailyTemperatures(temperatures)
 ## 4. Create the stack
 `Stack<int> stack = new Stack<int>();` - this creates an empty stack that will store indexs of days waiting for warmer temp. Example stack [2,3,4] these are indexs of days waiting for warmer temps. not temps themselves because we need to calculate `days waited= index-prev index`  
 
-## 5. 
-`if(n==num)` - 
+## 5. loop through each day
+`for(int i i=0; i<n; i++)` - for i from 0 to n-1 thi loops through every temp. example i=0, i=1. i=2... where temperatures[i]  
 
-## 6.
-`it(count%2==1)` - 
+## 6. check solves (warmer) than earlier days
+`while (stack.Count > 0 && temperatures[i] > temperatures[stack.Peek()])` - while stack is not empty and temperatures[i]>temperatures[top os stack]. 
 
-## 7. 
-`return num` -  
+this checks 2 conditions 
+ - that the stack is not empty
+ - todays temp is > than prev temp. "today is warmer than the day we were waiting for"
 
-## 8. 
-`return =1` -
+## 7. Pop the previous day
+`int prevIndex = stack.Pop();` - this removes the top element from the stack. example stack[2,3,4] pop 3 stack=[2,3]  
 
-## Walkthrough
-- 1. 
-- 2. 
-- 3. 
+## 8. calculate wait time (how many days)
+`answer[prevIndex] = i - prevIndex` - example prevIndex=4 i=5 then answer[4]=5-4 answer[4]=1 meaning day4 you waited 1 day for warmer weather. think jumps. 
 
- ```
-for each number
-  count how many times it(the number) appears
-  if the count is odd
-    reaturn it
+## 9. Push the surrent day
+`stack.Push(i)` push i onto stack. if todays temp did not solve some future day yet, store it. example stac[2,3] push 5 stck[2,3,5] this means day 5 still needs answer day (warmer day) in the futures
+
+## 10. reurn
+`return answer` - returns the result after checking all the temps it returns the answer arry
+
+## Walkthrough Example
+## Walkthrough Example
+
+- **1. input** `[73,74,75,71]`
+- **2. start** `stack = [] answer = [0,0,0,0]`
+- **3. day 0 temperature = 73** stack is empty, so push the index. `push 0` `stack = [] answer = [0,0,0,0]`
+- **4. day 1 temperature = 74** Check if today is warmer than the day on top of the stack. 74 > 7 This is true, so resolve the earlier day. `pop 0; answer[0] = 1 - 0 = 1; push 1`
+ Result: `stack = [1] answer = [1,0,0,0]`
+- **5. day 2  temperature = 75** Check: 75 > 74 True , so resolve the previous day. `pop 1; answer[1] = 2 - 1 = 1; push 2`
+Result: `stack = [2] answer = [1,1,0,0]`
+- **6. day 3 temperature = 71** Check: 71 < 75 Not  True (warmer), this day must wait. `push 3`
+Result: `stack = [2,3] answer = [1,1,0,0]`
+- **7. loop ends** Days `2` and `3` never find a warmer future temperature. Their answers remain `0`.
+- **Final answer** `[1,1,0,0]`
+
+The stack stores: `indexes of days still waiting for a warmer temperature`
+
+When a warmer day appears:
 ```
+pop old days
+calculate wait time
+store the answer
+```
+
+Then push the current day:
+```
+push current index onto the stack
+```
+
+---
+
+### Mental Model
+
+Think of the stack as:
+
+```
+"days still waiting for a warmer temperature"
+```
+
+When a warmer day arrives, those waiting days are **resolved immediately**.
 
 # method 2 Brute-Force
 ```
