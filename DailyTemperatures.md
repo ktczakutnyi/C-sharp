@@ -23,7 +23,7 @@ Tags: *Array, Stack, Monotonic Stack*
 
 # There are two diffrent ways to this that we will cover 
 # method 1 Monotonic Stack
-```
+```C#
 Public int[] DailyTemperatures(int[] temperatures)
 {
   int n=temperatures.Length;
