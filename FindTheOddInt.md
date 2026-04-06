@@ -21,7 +21,7 @@ Tags: *Fundamentals*
 
 # There are two diffrent ways to this that we will cover 
 # method 1
-```
+```C#
 Public Static int find_it(int[] seq)
 {
   foreach (int num in seq)
@@ -90,7 +90,7 @@ for each number
 
 # method 2
 **O(n) done by using XOR**
-```
+```C#
 Public Static int find_it(int[] seq)
 {
   int result = 0;
