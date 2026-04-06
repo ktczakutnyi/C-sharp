@@ -11,7 +11,7 @@ Note: If a number is a multiple of both 3 and 5, only count it once.
 Tags: *Mathematics, Algorithms*
 > Source https://www.codewars.com/kata/514b92a657cdc65150000006
 
-```
+```C#
 Public Static int solution (int value)
 {
   if(value <0 )
