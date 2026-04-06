@@ -144,7 +144,7 @@ When a warmer day arrives, those waiting days are **resolved immediately**.
 the stack stores `days that are still waiting for answer day` when warmer day appereas `pop earilier days and calculate waite and store`
 
 # method 2 Brute-Force
-```
+```C#
 public int[] DailyTemperatures(int[] temperatures)
 {
     int n = temperatures.Length;
